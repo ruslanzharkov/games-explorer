@@ -1,11 +1,11 @@
 import React from 'react';
 import { FaGamepad } from "react-icons/fa";
 
-import './Header.css';
+import styles from './Header.module.css';
 
 export const Header = () => {
   return (
-    <div className="Header">
+    <div className={styles.header}>
       <div>
         <FaGamepad size={35}/>
         <div>
