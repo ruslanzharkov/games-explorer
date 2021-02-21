@@ -1,7 +1,7 @@
 .App {
   background: #1b262c;
   color: #fff;
-  font-family: 'Roboto Mono for Powerline';
+  font-family: "Roboto Mono for Powerline";
 }
 
 .App-logo {
@@ -33,9 +33,9 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px)
+    transform: translateY(10px);
   }
   100% {
-    transform: translateY(0px)
+    transform: translateY(0px);
   }
 }
