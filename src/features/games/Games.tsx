@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {getGamesThunk, selectGames} from "./gamesSlice";
@@ -12,12 +12,13 @@ export function Games() {
 
   useEffect(() => {
     dispatch(getGamesThunk());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
     <div>
       {games.map((game) => (
-        <div className={styles.game}>
+        <div className={styles.game} key={game.id}>
           <img className={styles.gamePicture} src={game.background_image} alt={game.name}/>
         </div>
       ))}

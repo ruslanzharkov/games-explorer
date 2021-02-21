@@ -1,10 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import axios from 'axios';
+
 import { AppThunk, RootState } from '../../app/store';
+import {IGame} from "../../types/games";
 
 const gamesReducer = 'games';
 
 interface GamesState {
-  games: any[];
+  games: IGame[];
 }
 
 const initialState: GamesState = {
@@ -25,10 +28,9 @@ export const { getGamesReducer } = gamesSlice.actions;
 
 export const getGamesThunk = (): AppThunk => async dispatch => {
   try {
-    const response = await fetch('https://api.rawg.io/api/games');
-    const games = await response.json();
+    const games = await axios.get('https://api.rawg.io/api/games');
     dispatch(getGamesReducer({
-      games: games.results
+      games: games.data.results
     }));
   } catch (e) {
     console.log(e);
