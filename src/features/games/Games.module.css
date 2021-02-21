@@ -1,7 +1,4 @@
-.game {
-  width: 300px;
-}
-
-.gamePicture {
-  width: inherit;
+.games {
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -1,3 +1,11 @@
+export interface GameGenre {
+  games_count: number;
+  id: number;
+  image_background: string;
+  name: string;
+  slug: string;
+}
+
 export interface IGame {
   added: string;
   added_by_status: object;
@@ -5,7 +13,7 @@ export interface IGame {
   clip: object;
   dominant_color: string;
   esrb_rating: object;
-  genres: any[];
+  genres: GameGenre[];
   id: number;
   metacritic: number;
   name: string;

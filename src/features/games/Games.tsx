@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getGamesThunk, selectGames } from "./gamesSlice";
 
 import styles from "./Games.module.css";
+import { Card } from "../../components/common/card";
 
 export function Games() {
   const { games } = useSelector(selectGames);
@@ -16,15 +17,9 @@ export function Games() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.games}>
       {games.map((game) => (
-        <div className={styles.game} key={game.id}>
-          <img
-            className={styles.gamePicture}
-            src={game.background_image}
-            alt={game.name}
-          />
-        </div>
+        <Card key={game.id} game={game} />
       ))}
     </div>
   );
