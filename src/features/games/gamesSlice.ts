@@ -8,30 +8,36 @@ const gamesReducer = 'games';
 
 interface GamesState {
   games: IGame[];
+  next?: string;
 }
 
 const initialState: GamesState = {
   games: [],
+  next: undefined,
 };
 
 export const gamesSlice = createSlice({
   name: gamesReducer,
   initialState,
   reducers: {
-    getGamesReducer: (state, action: PayloadAction<GamesState>) => {
+    getGames: (state, action: PayloadAction<GamesState>) => {
       state.games = action.payload.games;
+      state.next = action.payload.next;
     },
   },
 });
 
-export const { getGamesReducer } = gamesSlice.actions;
+export const { getGames } = gamesSlice.actions;
 
-export const getGamesThunk = (): AppThunk => async (dispatch) => {
+export const getGamesThunk = (): AppThunk => async (dispatch, getState) => {
   try {
-    const games = await axios.get('https://api.rawg.io/api/games');
+    const next = getState().gamesReducer.next;
+    const prevGames = getState().gamesReducer.games;
+    const games = await axios.get(next ?? 'https://api.rawg.io/api/games');
     dispatch(
-      getGamesReducer({
-        games: games.data.results,
+      getGames({
+        games: [...prevGames, ...games.data.results],
+        next: games.data.next,
       })
     );
   } catch (e) {
@@ -39,6 +45,6 @@ export const getGamesThunk = (): AppThunk => async (dispatch) => {
   }
 };
 
-export const selectGames = (state: RootState) => state.games;
+export const selectGames = (state: RootState) => state.gamesReducer;
 
 export default gamesSlice.reducer;

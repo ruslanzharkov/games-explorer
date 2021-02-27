@@ -12,6 +12,7 @@ export function Games() {
 
   const onScroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      dispatch(getGamesThunk());
     }
   };
 
