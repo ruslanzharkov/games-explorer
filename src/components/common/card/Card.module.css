@@ -1,11 +1,12 @@
 .card {
   width: 300px;
   border-radius: 10px;
-  padding-right: 30px;
 }
 
 .cardImage {
   width: inherit;
+  height: 300px;
+  object-fit: cover;
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
 }
