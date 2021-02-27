@@ -25,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": " npx prettier --write ."
+    "prettier:write": "prettier --write --jsx-single-quote .",
+    "prettier:check": "prettier --check ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,10 +45,5 @@
   },
   "devDependencies": {
     "prettier": "2.2.1"
-  },
-  "prettier": {
-    "jsxSingleQuote": true,
-    "bracketSpacing": true,
-    "jsxBracketSameLine": false
   }
 }

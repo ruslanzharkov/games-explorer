@@ -1,7 +1,7 @@
-import React from "react";
-import { IGame } from "../../../types/games";
+import React from 'react';
+import { IGame } from '../../../types/games';
 
-import styles from "../../../components/common/card/Card.module.css";
+import styles from '../../../components/common/card/Card.module.css';
 
 interface CardProps {
   game: IGame;
