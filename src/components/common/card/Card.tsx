@@ -1,7 +1,7 @@
 import React from 'react';
 import { IGame } from '../../../types/games';
 
-import styles from '../../../components/common/card/Card.module.css';
+import styles from './Card.module.css';
 
 interface CardProps {
   game: IGame;
@@ -13,7 +13,8 @@ export const Card = ({
   return (
     <div className={styles.card}>
       <img className={styles.cardImage} src={background_image} alt={name} />
-      <div>
+      <div className={styles.cardInfo}>
+        <div className={styles.cardName}>{name}</div>
         <div className={styles.cardRow}>
           <div>Release date:</div>
           <div>{released}</div>
