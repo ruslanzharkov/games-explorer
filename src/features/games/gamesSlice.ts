@@ -6,7 +6,11 @@ import { IGame } from '../../types/games';
 
 const gamesReducer = 'games';
 
-interface GamesState {
+interface LoadingState {
+  loading: boolean;
+}
+
+interface GamesState extends LoadingState {
   games: IGame[];
   next?: string;
 }
@@ -14,6 +18,7 @@ interface GamesState {
 const initialState: GamesState = {
   games: [],
   next: undefined,
+  loading: false,
 };
 
 export const gamesSlice = createSlice({
@@ -24,13 +29,21 @@ export const gamesSlice = createSlice({
       state.games = action.payload.games;
       state.next = action.payload.next;
     },
+    setLoading: (state, action: PayloadAction<LoadingState>) => {
+      state.loading = action.payload.loading;
+    },
   },
 });
 
-export const { getGames } = gamesSlice.actions;
+export const { getGames, setLoading } = gamesSlice.actions;
 
 export const getGamesThunk = (): AppThunk => async (dispatch, getState) => {
   try {
+    dispatch(
+      setLoading({
+        loading: true,
+      })
+    );
     const next = getState().gamesReducer.next;
     const prevGames = getState().gamesReducer.games;
     const games = await axios.get(next ?? 'https://api.rawg.io/api/games');
@@ -38,6 +51,7 @@ export const getGamesThunk = (): AppThunk => async (dispatch, getState) => {
       getGames({
         games: [...prevGames, ...games.data.results],
         next: games.data.next,
+        loading: false,
       })
     );
   } catch (e) {

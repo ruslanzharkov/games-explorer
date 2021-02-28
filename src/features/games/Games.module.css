@@ -3,3 +3,9 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+.gamesMainLoader {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}

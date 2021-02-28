@@ -1,0 +1,18 @@
+.loader {
+  animation: loader-animation 1s infinite;
+}
+
+@keyframes loader-animation {
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  75% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
