@@ -31,7 +31,9 @@ export function Games() {
 
   return (
     <div className={styles.games}>
-      {games.length === 0 && loading && <Loader containerClassName={styles.gamesMainLoader} />}
+      {games.length === 0 && loading && (
+        <Loader containerClassName={styles.gamesMainLoader} />
+      )}
       {games.map((game) => (
         <Card key={game.id} game={game} />
       ))}
