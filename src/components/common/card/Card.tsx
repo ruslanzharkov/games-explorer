@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { IGame } from '../../../types/games';
 
 import styles from './Card.module.css';
@@ -7,9 +7,9 @@ interface CardProps {
   game: IGame;
 }
 
-export const Card = ({
+export const Card: FC<CardProps> = ({
   game: { background_image, name, released, genres },
-}: CardProps) => {
+}) => {
   return (
     <div className={styles.card}>
       <img className={styles.cardImage} src={background_image} alt={name} />
