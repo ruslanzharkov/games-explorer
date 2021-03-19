@@ -31,13 +31,13 @@ export function Games() {
 
   return (
     <div className={styles.games}>
-      {games.length === 0 && loading && (
+      {!Boolean(games.length) && loading && (
         <Loader containerClassName={styles.gamesMainLoader} />
       )}
       {games.map((game) => (
         <Card key={game.id} game={game} />
       ))}
-      {games.length !== 0 && loading && <Loader />}
+      {Boolean(games.length) && loading && <Loader />}
     </div>
   );
 }
