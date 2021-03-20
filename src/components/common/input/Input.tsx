@@ -10,7 +10,6 @@ export const Input: FC<InputProps> = ({ className = '' }) => {
   const inputClassNames = useMemo(() => [styles.input, className].join(' '), [
     className,
   ]);
-  console.log(inputClassNames);
   return (
     <div>
       <input className={inputClassNames} type='text' />

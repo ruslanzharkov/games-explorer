@@ -30,13 +30,15 @@ export function Games() {
   }, []);
 
   return (
-    <div className={styles.games}>
-      {!Boolean(games.length) && loading && (
-        <Loader containerClassName={styles.gamesMainLoader} />
-      )}
-      {games.map((game) => (
-        <Card key={game.id} game={game} />
-      ))}
+    <div className={styles.gamesContainer}>
+      <div className={styles.games}>
+        {!Boolean(games.length) && loading && (
+          <Loader containerClassName={styles.gamesMainLoader} />
+        )}
+        {games.map((game) => (
+          <Card key={game.id} game={game} />
+        ))}
+      </div>
       {Boolean(games.length) && loading && <Loader />}
     </div>
   );
