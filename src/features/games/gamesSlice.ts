@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 import { AppThunk, RootState } from '../../app/store';
 import { IGame } from '../../types/games';
+import { axios } from '../../config/axios';
 
 const gamesReducer = 'games';
 
