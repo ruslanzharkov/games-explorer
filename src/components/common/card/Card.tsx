@@ -21,9 +21,12 @@ export const Card: FC<CardProps> = ({
         </div>
         <div className={styles.cardRow}>
           <div>Genres:</div>
-          <div>
-            {genres.map((genre) => (
-              <div key={genre.id}>{genre.name}</div>
+          <div className={styles.cardGenre}>
+            {genres.map((genre, index) => (
+              <div key={genre.id}>
+                {genre.name}
+                {genres.length - 1 !== index ? ', ' : ''}
+              </div>
             ))}
           </div>
         </div>
