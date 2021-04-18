@@ -37,7 +37,11 @@ export function Games() {
         ))}
       </div>
       {loading && (
-        <Loader containerClassName={!Boolean(games.length) ? styles.gamesMainLoader : undefined} />
+        <Loader
+          containerClassName={
+            !Boolean(games.length) ? styles.gamesMainLoader : undefined
+          }
+        />
       )}
     </div>
   );
