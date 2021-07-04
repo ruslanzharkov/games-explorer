@@ -8,11 +8,13 @@ interface CardProps {
 }
 
 export const Card: FC<CardProps> = ({
-  game: { background_image, name, released, genres },
+  game,
 }) => {
+  const { background_image, name, released, genres } = game;
+
   return (
     <div className={styles.card}>
-      <img className={styles.cardImage} src={background_image} alt={name} />
+      <img loading="lazy" className={styles.cardImage} src={background_image} alt={name} />
       <div className={styles.cardInfo}>
         <div className={styles.cardName}>{name}</div>
         <div className={styles.cardRow}>
