@@ -10,16 +10,16 @@ interface InputProps {
 }
 
 export const Input: FC<InputProps> = memo((props) => {
-  const {
-    className = '',
-    placeholder,
-    type,
-  } = props;
+  const { className = '', placeholder, type } = props;
   const inputClassNames = [styles.input, className].join(' ');
 
   return (
     <div>
-      <input className={inputClassNames} type={type} placeholder={placeholder} />
+      <input
+        className={inputClassNames}
+        type={type}
+        placeholder={placeholder}
+      />
     </div>
   );
 });

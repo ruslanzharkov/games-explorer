@@ -10,7 +10,11 @@ export const Header: FC = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerInputContainer}>
-        <Input className={inputStyles} placeholder="Search ..." type={InputTypes.text} />
+        <Input
+          className={inputStyles}
+          placeholder='Search ...'
+          type={InputTypes.text}
+        />
       </div>
     </div>
   );

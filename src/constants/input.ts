@@ -20,5 +20,5 @@ export enum InputTypes {
   text = 'text',
   time = 'time',
   url = 'url',
-  week = 'week'
+  week = 'week',
 }

@@ -7,14 +7,17 @@ interface CardProps {
   game: IGame;
 }
 
-export const Card: FC<CardProps> = ({
-  game,
-}) => {
+export const Card: FC<CardProps> = ({ game }) => {
   const { background_image, name, released, genres } = game;
 
   return (
     <div className={styles.card}>
-      <img loading="lazy" className={styles.cardImage} src={background_image} alt={name} />
+      <img
+        loading='lazy'
+        className={styles.cardImage}
+        src={background_image}
+        alt={name}
+      />
       <div className={styles.cardInfo}>
         <div className={styles.cardName}>{name}</div>
         <div className={styles.cardRow}>
