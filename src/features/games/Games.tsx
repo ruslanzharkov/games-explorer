@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Masonry from 'react-masonry-css'
+import Masonry from 'react-masonry-css';
 
 import { getGamesThunk, selectGames } from './gamesSlice';
 
@@ -12,7 +12,7 @@ const breakpointColumnsObj = {
   default: 4,
   1500: 3,
   1200: 2,
-  500: 1
+  500: 1,
 };
 
 export function Games() {
