@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { IGame } from '../../../types/games';
 
 import styles from './Card.module.css';
@@ -7,7 +7,7 @@ interface CardProps {
   game: IGame;
 }
 
-export const Card: FC<CardProps> = ({ game }) => {
+export const Card: FC<CardProps> = memo(({ game }) => {
   const { background_image, name, released, genres } = game;
 
   return (
@@ -38,4 +38,4 @@ export const Card: FC<CardProps> = ({ game }) => {
       </div>
     </div>
   );
-};
+});

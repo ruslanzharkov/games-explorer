@@ -1,11 +1,19 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Masonry from 'react-masonry-css'
 
 import { getGamesThunk, selectGames } from './gamesSlice';
 
 import styles from './Games.module.css';
 import { Card } from '../../components/common/card';
 import { Loader } from '../../components/common/loader';
+
+const breakpointColumnsObj = {
+  default: 4,
+  1500: 3,
+  1200: 2,
+  500: 1
+};
 
 export function Games() {
   const { games, loading } = useSelector(selectGames);
@@ -31,11 +39,15 @@ export function Games() {
 
   return (
     <div className={styles.gamesContainer}>
-      <div className={styles.games}>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className={styles.masonry}
+        columnClassName={styles.masonryColumn}
+      >
         {games.map((game) => (
           <Card key={game.id} game={game} />
         ))}
-      </div>
+      </Masonry>
       {loading && (
         <Loader
           containerClassName={
