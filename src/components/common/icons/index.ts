@@ -1,0 +1,1 @@
+export { PlayStationIcon } from './PlayStationIcon';

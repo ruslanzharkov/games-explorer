@@ -18,7 +18,7 @@ export interface IGame {
   metacritic: number;
   name: string;
   parent_platforms: any[];
-  platforms: any[];
+  platforms: Platform[];
   playtime: number;
   rating: number;
   rating_top: number;
@@ -36,4 +36,20 @@ export interface IGame {
   tba: boolean;
   updated: string;
   user_game: string | null;
+}
+
+export interface Platform {
+  platform: {
+    games_count: number,
+    id: number;
+    image: string | null;
+    image_background: string;
+    name: string;
+    slug: string
+    year_end: number | null;
+    year_start: number | null;
+  }
+  released_at: string | null;
+  requirements_en: string | null;
+  requirements_ru: string | null;
 }
