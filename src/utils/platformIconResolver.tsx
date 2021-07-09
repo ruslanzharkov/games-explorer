@@ -16,4 +16,4 @@ export const resolvePlatformIcon = (platform: string) => {
     default:
       break;
   }
-}
+};

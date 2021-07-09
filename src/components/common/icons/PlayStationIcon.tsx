@@ -7,7 +7,7 @@ interface PlayStationIconProps {
 
 export const PlayStationIcon: FC<PlayStationIconProps> = ({
   width,
-  height
+  height,
 }) => {
   return (
     <svg

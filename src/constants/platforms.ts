@@ -7,5 +7,4 @@ export enum Platforms {
   Xbox360 = 'xbox360',
   MacOs = 'macos',
   Linux = 'linux',
-
 }

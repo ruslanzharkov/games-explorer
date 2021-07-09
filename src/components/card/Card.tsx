@@ -22,7 +22,7 @@ export const Card: FC<CardProps> = memo(({ game }) => {
       />
       <div className={styles.cardInfo}>
         <div>
-          {platforms.map(platform => (
+          {platforms.map((platform) => (
             <Fragment key={platform.platform.id}>
               {resolvePlatformIcon(platform.platform.slug)}
             </Fragment>

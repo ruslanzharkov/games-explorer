@@ -40,15 +40,15 @@ export interface IGame {
 
 export interface Platform {
   platform: {
-    games_count: number,
+    games_count: number;
     id: number;
     image: string | null;
     image_background: string;
     name: string;
-    slug: string
+    slug: string;
     year_end: number | null;
     year_start: number | null;
-  }
+  };
   released_at: string | null;
   requirements_en: string | null;
   requirements_ru: string | null;
