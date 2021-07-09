@@ -5,7 +5,7 @@ import Masonry from 'react-masonry-css';
 import { getGamesThunk, selectGames } from './gamesSlice';
 
 import styles from './Games.module.css';
-import { Card } from '../../components/common/card';
+import { Card } from '../../components/card';
 import { Loader } from '../../components/common/loader';
 
 const breakpointColumnsObj = {

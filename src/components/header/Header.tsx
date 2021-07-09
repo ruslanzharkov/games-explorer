@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { Input } from '../input';
+import { Input } from '../common/input';
 import styles from './Header.module.css';
-import { InputTypes } from '../../../constants/input';
+import { InputTypes } from '../../constants/input';
 
 const inputStyles = styles.headerInput;
 

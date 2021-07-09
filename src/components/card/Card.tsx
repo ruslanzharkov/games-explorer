@@ -1,5 +1,5 @@
 import React, { FC, memo } from 'react';
-import { IGame } from '../../../types/games';
+import { IGame } from '../../types/games';
 
 import styles from './Card.module.css';
 
