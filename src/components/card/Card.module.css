@@ -12,6 +12,20 @@
   border-top-right-radius: inherit;
 }
 
+.platforms {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.platform {
+  margin-right: 10px;
+}
+
+.platform:empty {
+  margin-right: 0;
+}
+
 .cardInfo {
   padding: 16px 16px 24px;
 }

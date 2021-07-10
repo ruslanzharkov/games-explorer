@@ -1,9 +1,11 @@
-import React, { FC, memo, Fragment } from 'react';
+import React, { FC, memo } from 'react';
 import { IGame } from '../../types/games';
 
 import styles from './Card.module.css';
-import { PlayStationIcon } from '../common/icons';
-import { resolvePlatformIcon } from '../../utils/platformIconResolver';
+import {
+  createUniquePlatforms,
+  resolvePlatformIcon,
+} from '../../utils/platform';
 
 interface CardProps {
   game: IGame;
@@ -11,6 +13,7 @@ interface CardProps {
 
 export const Card: FC<CardProps> = memo(({ game }) => {
   const { background_image, name, released, genres, platforms } = game;
+  const uniquePlatforms = createUniquePlatforms(platforms);
 
   return (
     <div className={styles.card}>
@@ -21,11 +24,11 @@ export const Card: FC<CardProps> = memo(({ game }) => {
         alt={name}
       />
       <div className={styles.cardInfo}>
-        <div>
-          {platforms.map((platform) => (
-            <Fragment key={platform.platform.id}>
-              {resolvePlatformIcon(platform.platform.slug)}
-            </Fragment>
+        <div className={styles.platforms}>
+          {uniquePlatforms.map((platform) => (
+            <div className={styles.platform} key={platform}>
+              {resolvePlatformIcon(platform)}
+            </div>
           ))}
         </div>
         <div className={styles.cardName}>{name}</div>

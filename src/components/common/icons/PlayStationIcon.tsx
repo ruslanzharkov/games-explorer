@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
+import { CommonIconProps } from '../../../types/icons';
 
-interface PlayStationIconProps {
-  width: number;
-  height: number;
-}
+interface PlayStationIconProps extends CommonIconProps {}
 
 export const PlayStationIcon: FC<PlayStationIconProps> = ({
   width,
