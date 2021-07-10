@@ -9,7 +9,7 @@ import {
   NintendoSwitch,
   PlayStationIcon,
   WindowsIcon,
-  XboxIcon
+  XboxIcon,
 } from '../components/common/icons';
 
 const width = 20;
