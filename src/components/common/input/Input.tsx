@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './Input.module.css';
 import { InputTypes } from '../../../constants/input';

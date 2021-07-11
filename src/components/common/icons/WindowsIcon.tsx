@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { CommonIconProps } from '../../../types/icons';
 
 interface WindowsIconProps extends CommonIconProps {}

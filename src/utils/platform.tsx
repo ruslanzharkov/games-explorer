@@ -1,5 +1,3 @@
-import React, { ReactNode } from 'react';
-
 import { Platforms, TransformedUniquePlatforms } from '../constants/platforms';
 import { Platform } from '../types/games';
 import {
