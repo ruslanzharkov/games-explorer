@@ -11,8 +11,9 @@ interface CardProps {
   game: IGame;
 }
 
-export const Card: FC<CardProps> = memo(({ game }) => {
-  const { background_image, name, released, genres, platforms } = game;
+export const Card: FC<CardProps> = memo((props) => {
+  const { game } = props;
+  const { background_image, name, released, genres, platforms, metacritic } = game;
   const uniquePlatforms = createUniquePlatforms(platforms);
 
   return (
@@ -24,12 +25,15 @@ export const Card: FC<CardProps> = memo(({ game }) => {
         alt={name}
       />
       <div className={styles.cardInfo}>
-        <div className={styles.platforms}>
-          {uniquePlatforms.map((platform) => (
-            <div className={styles.platform} key={platform}>
-              {resolvePlatformIcon(platform)}
-            </div>
-          ))}
+        <div className={styles.cardPlatformsRating}>
+          <div className={styles.platforms}>
+            {uniquePlatforms.map((platform) => (
+              <div className={styles.platform} key={platform}>
+                {resolvePlatformIcon(platform)}
+              </div>
+            ))}
+          </div>
+          {metacritic}
         </div>
         <div className={styles.cardName}>{name}</div>
         <div className={styles.cardRow}>

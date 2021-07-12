@@ -12,6 +12,11 @@
   border-top-right-radius: inherit;
 }
 
+.cardPlatformsRating {
+  display: flex;
+  justify-content: space-between;
+}
+
 .platforms {
   display: flex;
   flex-direction: row;
