@@ -70,7 +70,5 @@ export const createUniquePlatforms = (platforms: Platform[]) => {
     })
   );
 
-  const uniqueArray = [] as TransformedUniquePlatforms[];
-  uniquePlatforms.forEach((item) => uniqueArray.push(item));
-  return uniqueArray;
+  return Array.from(uniquePlatforms);
 };
