@@ -13,7 +13,14 @@ interface CardProps {
 
 export const Card: FC<CardProps> = memo((props) => {
   const { game } = props;
-  const { background_image, name, released, genres, platforms, metacritic } = game;
+  const {
+    background_image,
+    name,
+    released,
+    genres,
+    platforms,
+    metacritic,
+  } = game;
   const uniquePlatforms = createUniquePlatforms(platforms);
 
   return (
