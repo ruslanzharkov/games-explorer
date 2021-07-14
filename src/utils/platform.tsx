@@ -10,8 +10,8 @@ import {
   XboxIcon,
 } from '../components/common/icons';
 
-const width = 20;
-const height = 20;
+const width = 16;
+const height = 16;
 
 export const resolvePlatformIcon = (
   uniquePlatform: TransformedUniquePlatforms
