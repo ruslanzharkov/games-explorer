@@ -56,3 +56,8 @@
   display: flex;
   flex-direction: row;
 }
+
+.cardGenre > div:not(:last-of-type)::after {
+  content: ',';
+  margin-right: 5px;
+}

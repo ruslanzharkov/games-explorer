@@ -50,10 +50,9 @@ export const Card: FC<CardProps> = memo((props) => {
         <div className={styles.cardRow}>
           <div>Genres:</div>
           <div className={styles.cardGenre}>
-            {genres.map((genre, index) => (
+            {genres.map((genre) => (
               <div key={genre.id}>
                 {genre.name}
-                {genres.length - 1 !== index ? ', ' : ''}
               </div>
             ))}
           </div>
